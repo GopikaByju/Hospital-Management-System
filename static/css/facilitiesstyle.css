@@ -1,0 +1,18 @@
+.p2{
+    text-align:center;
+    color:black;
+    font-family:stencil;
+    padding-right:18%;
+
+}
+
+.row{
+    margin-left:1%;
+    padding-left:1%
+
+   }
+.card{
+    box-shadow: 1opx 10px 10px 5px rgb(5, 5, 5);
+    object-fit:cover;
+    margin:20px;
+   }

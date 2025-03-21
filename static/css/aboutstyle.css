@@ -1,0 +1,16 @@
+h1{
+    font-family:stencil;
+    color:black;
+}
+img{
+  height:200px;
+  width:250px;
+}
+.row{
+padding-left: 300px;
+justify-content:center;
+}
+p{
+color:black;
+margin-left:6%;
+}

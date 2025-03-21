@@ -1,0 +1,10 @@
+.div1{
+        background-color: rgb(42, 185, 241);
+        color:white;
+        width:75%;
+        text-align: center;
+        border:2px solid yellow;
+    }
+    #DIV{
+        padding-left:20%;
+    }

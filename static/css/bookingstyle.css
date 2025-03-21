@@ -1,0 +1,98 @@
+#div1
+{
+    color:white;
+    background-color:rgb(42, 185, 241);;
+}
+#p1
+{
+    float:left;
+    font-size: x-large;
+    padding-left: 30px;
+}
+#a1,#a2,#a3,#a4,#a5,#a6
+{
+    color: white;
+}
+
+.p2{
+    text-align:center;
+    color:black;
+    font-family:stencil;
+    padding-right:16%;
+
+
+}
+.DIV{
+    background-color: skyblue;
+    color:black;
+    width:60%;
+    text-align: center;
+    padding-left:10%;
+    padding-right:10%;
+    margin-left:20%;
+   
+}
+       body {
+        background-color:#f1f9fc;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-control {
+        height: 60px;  /* Increased height */
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #b3e5fc;
+        transition: border-color 0.3s ease-in-out;
+        width: 100%;  /* Full width for the text field */
+    }
+
+    .form-control:focus {
+        border-color: #26c6da;
+        box-shadow: 0 0 5px rgba(38, 198, 218, 0.5);
+    }
+
+    .btn-primary {
+        background-color: #26c6da;
+        border-color: #26c6da;
+        font-weight: bold;
+    }
+
+    .btn-primary:hover {
+        background-color: #00acc1;
+        border-color: #00acc1;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    hr {
+        border: 1px solid #26c6da;
+    }
+
+    .fw-bold {
+        font-weight: bold;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .text-muted {
+        color: #616161;
+    }
