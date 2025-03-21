@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<link href="{%static 'css/departmentstyle.css'%}" rel="stylesheet">
+<h1 class="h1">
+         Department Details
+    </h1>
+<hr>
+    <div id="DIV">
+    <div class="div1">
+    <br>
+        <h1>DEPARTMENT OF {{dept.name}}</h1>
+        <p>{{dept.description}}</p>
+    </div>
+    </div>
+<center>
+    <ul>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>DOCTORS</h3>
+        {% for doctor in doctors %}
+            <li>
+                <strong>{{ doctor.name }}</strong> <br>
+                {{ doctor.department }}<br>
+
+                {% if doctor.doctor_image %}
+                    <img src="{{ doctor.doctor_image.url }}" alt="{{ doctor.name }}" width="400">
+                {% endif %}
+            </li>
+        {% empty %}
+            <p>No doctors available in this department.</p>
+        {% endfor %}
+        </center>
+    </ul>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Form Submission</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submitForm").click(function(event){
+                event.preventDefault();  // Prevent normal form submission
+
+                let name = $("#name").val();
+                let email = $("#email").val();
+
+                $.ajax({
+                    url: "/submit/",
+                    type: "POST",
+                    data: { "name": name, "email": email },
+                    success: function(response) {
+                        alert(response.message);  // Show success message
+                        $("#ajaxForm").reset();  // Reset form after submission
+                    },
+                    error: function(xhr) {
+                        alert("Error: " + xhr.responseText);  // Show error message
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h2>Submit Data</h2>
+    <form id="ajaxForm">
+        <input type="text" id="name" placeholder="Enter Name" required><br><br>
+        <input type="email" id="email" placeholder="Enter Email" required><br><br>
+        <button id="submitForm">Submit</button>
+    </form>
+
+</body>
+</html>

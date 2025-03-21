@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/departmentstyle.css' %}" rel="stylesheet">
+
+<div class="container my-5">
+    <!-- Page Title -->
+    <div class="text-center mb-4">
+        <h1 class="display-4 text-primary font-weight-bold">{{doc.name}}</h1>
+        {{doc.department}}
+        <hr class="mb-4">
+    </div>
+
+    <!-- Doctor Details Card -->
+    <div class="card shadow-lg p-4" style="background-color: #eaf4fc; border-radius: 15px;">
+        <div class="card-body">
+
+
+            <h3 class="text-primary font-weight-bold mt-4">Qualification</h3>
+            <p class="text-muted">{{ doc.qualification }}</p>
+
+            <h3 class="text-primary font-weight-bold mt-4">Experience</h3>
+            <p class="text-muted">{{ doc.experience }} years</p>
+
+            <h3 class="text-primary font-weight-bold mt-4">Outpatient Timings (OP)</h3>
+            <p class="text-muted">{{ doc.op }}</p>
+
+
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{% url 'doctorspage' %}" class="btn btn-outline-primary rounded-pill px-4">Back to Doctor Listings</a>
+    </div>
+</div>
+
+{% endblock %}

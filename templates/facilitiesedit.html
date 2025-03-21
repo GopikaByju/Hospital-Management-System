@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/doctorstyle.css' %}" rel="stylesheet">
+ <h1 class="h1">
+        FACILITIES EDIT
+    </h1>
+    <hr>
+<form method="POST">
+    {{form.as_p}}
+   {% csrf_token %}
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/gallerystyle.css' %}" rel="stylesheet">
+
+
+    <!-- Section Title -->
+   <div class="p2">
+        <h1>GALLERY</h1>
+      </div>
+    <p class="text-muted"><center>Explore our collection of images</center></p>
+    <hr>
+   <div class="container my-5">
+    <!-- Gallery Grid -->
+    <div class="row g-4">
+        {% for item in gal %}
+        <div class="col-md-4 col-sm-6">
+            <div class="card shadow-sm">
+                <img
+                    src="{{ item.galimage.url }}"
+                    alt="Gallery Image"
+                    class="card-img-top"
+                    style="height: 250px; object-fit: cover; border-radius: 5px 5px 0 0;">
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link href="{% static 'css/bookingstyle.css' %}" rel="stylesheet">
+
+<div class="p2">
+    <h1>Make an Appointment</h1>
+</div>
+<hr>
+<div class="DIV">
+    <div class="container mt-15" style="width:504px;height:481px">
+        <form method="POST">
+     {{form.as_p}}
+     {% csrf_token %}
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

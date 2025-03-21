@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h2>Click the button to get data from Django</h2>
+    <button id="fetchData">Get Data</button>
+    <ul id="result"></ul>
+
+    <script>
+        $(document).ready(function(){
+            $("#fetchData").click(function(){
+                $.ajax({
+                    url: "/get-data/",  // Django URL
+                    type: "GET",
+                    success: function(response) {
+                       // $("#result").text(response.data); // Update HTML with resp
+
+                       response.forEach(person => {
+                        let listItem = `<li>ID: ${person.id}, Name: ${person.name}, Email: ${person.email}</li>`;
+                        $("#result").append(listItem); // Append each item instead of replacing
+                    });
+
+                    },
+                    error: function() {
+                        $("#result").text("Error fetching data");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    </body>
+</html>

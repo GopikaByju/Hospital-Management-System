@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/departmentstyle.css' %}" rel="stylesheet">
+<div class="container my-4">
+    <h1 class="h1">
+        Join our team
+    </h1>
+    <hr>
+<div class="container my-5">
+    <!-- Section Title -->
+    <div class="text-center mb-5">
+
+        <p class="text-muted">Explore exciting career opportunities at our hospital.</p>
+    </div>
+
+    <!-- Filters & Search -->
+    <div class="card shadow-sm p-4 mb-5" style="background-color: #eaf4fc; border-radius: 15px;">
+        <form method="GET"  class="row g-3">
+            <div class="col-md-6">
+                <label  class="form-label font-weight-bold">Job Type</label>
+                <select class="form-select" name="job_type">
+                    <option value="">Select Job Type</option>
+                    <option value="full time">Full Time</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label  class="form-label font-weight-bold">Workspace</label>
+                <select class="form-select" name="job_workspace">
+                    <option value="">Select Workspace</option>
+                    <option value="in office">In Office</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary rounded-pill">Search Jobs</button>
+            </div>
+        </form>
+    </div>
+      </div>
+
+<!-- Job Listings -->
+<div class="row">
+    {% for item in car %}
+    <div class="col-md-6 col-lg-12 mb-4">
+        <div class="card h-100 shadow-lg" style="background-color: #eaf4fc; border-radius: 15px;">
+            <div class="card-body text-center">
+                <!-- Job Icon -->
+                <div class="mb-3">
+                    <i class="fas fa-briefcase text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <!-- Job Title -->
+                <h5 class="card-title text-primary font-weight-bold">{{ item.job_title }}</h5>
+
+                <hr>
+                <!-- Short Job Description -->
+                <p>Medical Trust Hospital,Mahatma Gandhi Rd,Pallimukku,Kochi,Ernakulam,Kerala,India</p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="{% url 'careerdetails' item.id %}" class="btn btn-outline-primary rounded-pill">View Job</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+

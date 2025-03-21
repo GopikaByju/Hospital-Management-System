@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link href="{% static 'css/departmentstyle.css' %}" rel="stylesheet">
+
+<div class="container my-5">
+    <!-- Job Title Section -->
+    <div class="text-center mb-4">
+        <h1 class="display-4 text-primary font-weight-bold">{{ car.job_title }}</h1>
+        <p class="text-muted">{{ car.job_type }} | {{ car.job_workspace }}</p>
+        <hr class="mb-4">
+    </div>
+
+    <!-- Job Details Card -->
+    <div class="card shadow-lg p-4" style="background-color: #eaf4fc; border-radius: 15px;">
+        <div class="card-body">
+            <!-- About the Role -->
+            <h3 class="text-primary font-weight-bold">About the Role</h3>
+            <ul class="text-muted">
+                {% for line in car.job_desc.splitlines %}
+                <li>{{ line }}</li>
+                {% endfor %}
+            </ul>
+
+
+            <h3 class="text-primary font-weight-bold mt-4">Requirements</h3>
+            <ul class="text-muted">
+                {% for line in car.job_req.splitlines %}
+                <li>{{ line }}</li>
+                {% endfor %}
+            </ul>
+
+
+            <h3 class="text-primary font-weight-bold mt-4">About the Company</h3>
+            <p class="text-muted">
+                Medical Trust Hospital, a 750-bed multi-specialty acute-cum-critical care referral hospital,
+                is one of the most well-equipped and premier hospitals in South India. Since inception in 1973,
+                the hospital has grown with the commitment and passion of over 1,500 dedicated healthcare
+                professionals, comprising internationally acclaimed doctors and efficient support staff.
+            </p>
+
+            <p class="text-muted">
+                We are known for our **personalized, patient-centered treatment**, state-of-the-art infrastructure,
+                and high ethical standards. Our founder, **Dr. P. A. Verghese**, established a **world-class medical complex**
+                that continues to serve international and local patients with equal passion.
+            </p>
+
+            <div class="text-center mt-4">
+                <a href="" class="btn btn-success btn-lg rounded-pill px-4">
+                    Apply Now <i class="fas fa-paper-plane ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{% url 'careers' %}" class="btn btn-outline-primary rounded-pill px-4">Back to Job Listings</a>
+    </div>
+</div>
+
+{% endblock %}
